@@ -91,6 +91,7 @@ class BrandController extends Controller
         $brand = Brand::find($id);
 
         if($brand){
+            unlink(public_path('/images/brand/'.$brand->image));
             $brand->delete();
             return response()->json('Brand Delete Successfully');
         }

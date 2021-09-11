@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,18 @@ Route::post('/brandstore',[BrandController::class,'store']);
 Route::get('/brandedit/{id}',[BrandController::class,'edit']);
 Route::post('/brandupdate/{id}',[BrandController::class,'update']);
 Route::post('/branddelete/{id}',[BrandController::class,'destroy']);
+
+Route::get('/categoryall',[CategoryController::class,'index']);
+Route::post('/categorystore',[CategoryController::class,'store']);
+Route::get('/categoryedit/{id}',[CategoryController::class,'edit']);
+Route::post('/categoryupdate/{id}',[CategoryController::class,'update']);
+Route::post('/categorydelete/{id}',[CategoryController::class,'destroy']);
+
+Route::get('/productall',[ProductController::class,'index']);
+Route::post('/productstore',[ProductController::class,'store']);
+Route::get('/productedit/{id}',[ProductController::class,'edit']);
+Route::post('/productupdate/{id}',[ProductController::class,'update']);
+Route::post('/productdelete/{id}',[ProductController::class,'destroy']);
 
 // Route::get('/getadmin',[AdminController::class,'getAdmin']);
 

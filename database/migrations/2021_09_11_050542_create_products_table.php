@@ -17,16 +17,17 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('brand_id');
             $table->integer('stock')->nullable();
             $table->string('model')->nullable();
             $table->string('color')->nullable();
-            $table->string('image')->nullable();
             $table->string('price')->nullable();
             $table->string('year')->nullable();
             $table->text('description')->nullable();
             $table->string('slug');
             $table->boolean('status')->default(true);
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->timestamps();
         });
     }
